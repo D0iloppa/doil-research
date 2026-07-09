@@ -14,10 +14,11 @@
 
 ```bash
 git clone https://github.com/D0iloppa/doil-research.git
-CFG="${CLAUDE_CONFIG_DIR:-$HOME/.claude}"
-mkdir -p "$CFG/skills"
-ln -sfn "$(pwd)/doil-research" "$CFG/skills/doil-research"
+cd doil-research
+./install.sh          # 이 스킬을 <config>/skills/ 로 심볼릭 링크
 ```
+
+`install.sh`는 `CLAUDE_CONFIG_DIR`(없으면 `~/.claude`)의 `skills/`에 이 repo를 링크한다.
 
 여러 스킬을 함께 관리하려면 집계 repo [`D0iloppa/skills`](https://github.com/D0iloppa/skills)가
 이 repo를 서브모듈로 장착한다.
